@@ -595,7 +595,9 @@ ExcelMoveMode = (function() {
       _this = this;
 
     tableId = this.table.tableId;
-    rowId = column.parents().attr('data-id').split('.')[2];
+    if (column.parents().length > 0) {
+      rowId = column.parents().attr('data-id').split('.')[2];
+    }
     columnId = column.attr('data-column');
     input.on('keydown', function(event) {
       var nextColumn, nextRow, prevColumn, prevRow, value;

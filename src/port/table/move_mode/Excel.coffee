@@ -42,7 +42,7 @@ class ExcelMoveMode
 
 	move: (input, column) ->
 		tableId  = @table.tableId
-		rowId    = column.parents().attr('data-id').split('.')[2]
+		rowId    = column.parents().attr('data-id').split('.')[2] if column.parents().length > 0
 		columnId = column.attr 'data-column'
 
 		input.on 'keydown', (event) =>
